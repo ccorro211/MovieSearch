@@ -1,5 +1,5 @@
 import { useDispatch ,useSelector} from "react-redux"
-import { addMovie, changeMovies, changePage, changeViewPage } from "../store"
+import { addMovie, changeLoading, changeMovies, changePage, changeViewPage } from "../store"
 import axios from "axios"
 import Search from './Search';
 import { useState } from "react";
@@ -12,9 +12,10 @@ export default function ViewMoreBtn(){
     return (
         <>
             {a.viewpage>10?<button className="btn" onClick={(e)=>{
-                
+                dispatch(changeLoading(""))
                 axios.get(`https://omdbapi.com/?apikey=7035c60c&s=${a.searchText}&page=${a.page+1}`).then((res) => {
                     console.log(res.data)
+                    dispatch(changeLoading("hide"))
                     dispatch(changePage())
                     dispatch(addMovie(res.data.Search))
                     dispatch(changeViewPage())
