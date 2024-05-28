@@ -1,6 +1,7 @@
 
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import Movieitem from './Movieitem';
+import ViewMoreBtn from './ViewMoreBtn';
 
 export default function MovieList(){
 
@@ -11,15 +12,19 @@ export default function MovieList(){
         return null
     }else{
         return(
-            <div className='movielist'>
-                {a.movies[0].map((e)=>{
-                    return (
-                        <>
-                            <Movieitem item={e}/>
-                        </>
-                    )
-                })}
-            </div>
+            <>
+                <div className='movielist'>
+                    {a.movies.map((e)=>{
+                        return (
+                            <>
+                                <Movieitem item={e}/>
+                            </>
+                        )
+                    })}
+                </div>
+                <ViewMoreBtn />
+            </>
+            
         )
     }
     
