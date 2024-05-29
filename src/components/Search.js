@@ -14,7 +14,7 @@ export default function Search(){
     return (
         <>
             <div className="search">
-            <input placeholder="Enter the movie title to search!" onKeyUp={(e)=>{
+            <input  placeholder="Enter the movie title to search!" onKeyUp={(e)=>{
                 dispatch(changeText(e.target.value))
                 if(e.key === 'Enter' && a.searchText.trim()){
                     axios.get(`https://omdbapi.com/?apikey=7035c60c&s=${a.searchText}&page=1`).then((res) => {
