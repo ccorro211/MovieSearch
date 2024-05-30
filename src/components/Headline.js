@@ -4,7 +4,7 @@ export default function Headline(){
             <h1>
                 <span>OMDb API</span><br />
                 THE OPEN<br />
-                MOVIE DATABASE
+                MOVIE DATABASE!
             </h1>
             <p>
                 The OMDb API is a RESTful web service to obtain movie information, <br />
